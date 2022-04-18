@@ -16,6 +16,6 @@ S = "${WORKDIR}/git"
 
 KCONFIG_MODE="--alldefconfig"
 
-COMPATIBLE_MACHINE = "(nanopi-r2c)"
+COMPATIBLE_MACHINE = "(nanopi-r2c|orangepi-r1-plus-lts)"
 
 LIC_FILES_CHKSUM = "file://LICENSES/preferred/GPL-2.0;md5=e6a75371ba4d16749254a51215d13f97"

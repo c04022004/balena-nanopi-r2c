@@ -6,6 +6,7 @@ UBOOT_KCONFIG_SUPPORT = "1"
 
 # we need these tools in order to create the Rockchip bootloader images (see below in do_compile)
 DEPENDS += "rkbin-tools rkbin-tools-native"
+do_compile[depends] += "rkbin-tools:do_deploy"
 
 SRC_URI_remove = "file://resin-specific-env-integration-kconfig.patch"
 
@@ -22,6 +23,10 @@ SRC_URI_append_nanopi-r2c = " \
 
 BALENA_BOOT_PART_nanopi-r2s = "4"
 BALENA_DEFAULT_ROOT_PART_nanopi-r2s = "5"
+
+SRC_URI_append_orangepi-r1-plus-lts = " \
+    file://r1plus-lts.cfg \
+"
 
 # fix for the BSP overwriting the configure() task
 # we want to have our configs applied even with the BSP messing with the build tasks
